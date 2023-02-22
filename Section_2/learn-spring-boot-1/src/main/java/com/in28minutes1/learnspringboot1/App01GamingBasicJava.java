@@ -5,9 +5,10 @@ import com.in28minutes1.learnspringboot1.game.MarioGame;
 import com.in28minutes1.learnspringboot1.game.PacmanGame;
 import com.in28minutes1.learnspringboot1.game.SuperContraGame;
 
-public class AppGamingBasicJava {
+public class App01GamingBasicJava {
 
 	public static void main(String[] args) {
+
 		// var marioGame = new MarioGame();	
 		// var superContraGame = new SuperContraGame();	
 		var pacmanGame = new PacmanGame();		
