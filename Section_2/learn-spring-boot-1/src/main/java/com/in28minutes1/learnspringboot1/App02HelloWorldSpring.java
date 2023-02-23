@@ -1,5 +1,7 @@
 package com.in28minutes1.learnspringboot1;
 
+import java.util.Arrays;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class App02HelloWorldSpring {
@@ -18,6 +20,12 @@ public class App02HelloWorldSpring {
 		System.out.println(context.getBean("person2MethodCall"));
 		System.out.println(context.getBean("person3Parameters"));
 		System.out.println(context.getBean("address_custom"));
+		System.out.println(context.getBean(Person.class));
+		System.out.println(context.getBean(Address.class));
+		
+		System.out.println("\nDisplay all Spring Boot Beans ->\n");
+		Arrays.stream(context.getBeanDefinitionNames())
+			.forEach(System.out::println);
 	}
 
 }
