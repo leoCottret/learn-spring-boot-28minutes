@@ -11,7 +11,9 @@ public class App01GamingBasicJava {
 
 		// var marioGame = new MarioGame();	
 		// var superContraGame = new SuperContraGame();	
+		
 		var pacmanGame = new PacmanGame();		
+		
 		var gameRunner = new GameRunner(pacmanGame);
 		gameRunner.run();
 	}

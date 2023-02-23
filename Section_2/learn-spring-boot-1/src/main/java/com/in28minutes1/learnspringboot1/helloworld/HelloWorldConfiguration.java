@@ -1,4 +1,4 @@
-package com.in28minutes1.learnspringboot1;
+package com.in28minutes1.learnspringboot1.helloworld;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
