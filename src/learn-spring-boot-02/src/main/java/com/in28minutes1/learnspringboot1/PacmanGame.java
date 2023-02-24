@@ -1,4 +1,4 @@
-package com.in28minutes1.learnspringboot1.game;
+package com.in28minutes1.learnspringboot1;
 
 import org.springframework.stereotype.Component;
 
