@@ -1,4 +1,4 @@
-package com.in28minutes1.learnspringboot1;
+package com.in28minutes.learnspringboot.game;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan("com.in28minutes1.learnspringboot1")
+@ComponentScan("com.in28minutes.learnspringboot.game")
 public class GamingAppLauncherApplication {
 	
 	public static void main(String[] args) {
