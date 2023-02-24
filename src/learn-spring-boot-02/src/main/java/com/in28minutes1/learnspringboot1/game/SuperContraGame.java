@@ -1,5 +1,10 @@
 package com.in28minutes1.learnspringboot1.game;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
+@Qualifier("SuperContraGameQualifier")
 public class SuperContraGame implements GamingConsole {
 	
 	public void up() {
