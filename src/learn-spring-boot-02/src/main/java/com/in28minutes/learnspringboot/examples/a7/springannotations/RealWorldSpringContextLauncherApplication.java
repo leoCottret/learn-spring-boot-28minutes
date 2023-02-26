@@ -1,4 +1,4 @@
-package com.in28minutes.learnspringboot.examples.a2.realworld;
+package com.in28minutes.learnspringboot.examples.a7.springannotations;
 
 import java.util.Arrays;
 
