@@ -1,4 +1,4 @@
-package com.in28minutes.learnspringboot.game;
+package com.in28minutes.learnspringframework.game;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;

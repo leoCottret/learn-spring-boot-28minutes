@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
-import com.in28minutes.learnspringboot.game.GameRunner;
+import com.in28minutes.learnspringframework.game.GameRunner;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;

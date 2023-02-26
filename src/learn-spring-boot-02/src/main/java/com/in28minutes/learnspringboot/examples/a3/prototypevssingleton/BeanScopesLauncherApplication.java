@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import com.in28minutes.learnspringboot.game.GameRunner;
+import com.in28minutes.learnspringframework.game.GameRunner;
 
 @Component
 class NormalClass {

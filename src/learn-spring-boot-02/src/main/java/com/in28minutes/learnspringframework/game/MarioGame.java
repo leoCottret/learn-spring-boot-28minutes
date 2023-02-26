@@ -1,4 +1,4 @@
-package com.in28minutes.learnspringboot.game;
+package com.in28minutes.learnspringframework.game;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;

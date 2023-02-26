@@ -1,4 +1,4 @@
-package com.in28minutes.learnspringboot.game;
+package com.in28minutes.learnspringframework.game;
 
 public interface GamingConsole {
 	public void up();

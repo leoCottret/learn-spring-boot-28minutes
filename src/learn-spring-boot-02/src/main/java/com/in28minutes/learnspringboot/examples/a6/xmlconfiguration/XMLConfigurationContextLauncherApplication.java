@@ -1,4 +1,4 @@
-package com.in28minutes.learnspringboot.examples.a2;
+package com.in28minutes.learnspringboot.examples.a6.xmlconfiguration;
 
 import java.util.Arrays;
 
@@ -7,23 +7,24 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
 import com.in28minutes.learnspringframework.game.GameRunner;
 
-// Should be in their own files, ofc
-
-@Configuration
-@ComponentScan
-public class BusinessCalculationLauncherApplication {
+public class XMLConfigurationContextLauncherApplication {
 	
 	public static void main(String[] args) {
 		
-		try (var context = new AnnotationConfigApplicationContext(BusinessCalculationLauncherApplication.class)) {
+		try (var context = new ClassPathXmlApplicationContext("file:src/main/resources/contextConfiguration.xml")) {
 			
-			//Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
+			Arrays.stream(context.getBeanDefinitionNames())
+				.forEach(System.out::println);
 			
-			System.out.println(context.getBean(BusinessCalculationService.class).findMax());
+			System.out.println(context.getBean("name"));
+			
+			context.getBean(GameRunner.class).run();			
+			
 		}
 		
 	}
