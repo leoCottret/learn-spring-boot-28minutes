@@ -1,4 +1,4 @@
-package com.in28minutes.learnspringboot.examples.a2;
+package com.in28minutes.learnspringboot.examples.a2.realworld;
 
 import org.springframework.stereotype.Component;
 

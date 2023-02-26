@@ -1,4 +1,4 @@
-package com.in28minutes.learnspringboot.examples.a2;
+package com.in28minutes.learnspringboot.examples.a2.realworld;
 
 import java.util.Arrays;
 
@@ -15,11 +15,11 @@ import com.in28minutes.learnspringframework.game.GameRunner;
 
 @Configuration
 @ComponentScan
-public class BusinessCalculationLauncherApplication {
+public class RealWorldSpringContextLauncherApplication {
 	
 	public static void main(String[] args) {
 		
-		try (var context = new AnnotationConfigApplicationContext(BusinessCalculationLauncherApplication.class)) {
+		try (var context = new AnnotationConfigApplicationContext(RealWorldSpringContextLauncherApplication.class)) {
 			
 			//Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
 			
