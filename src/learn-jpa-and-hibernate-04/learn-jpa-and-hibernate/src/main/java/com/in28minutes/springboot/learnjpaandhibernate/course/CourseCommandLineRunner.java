@@ -28,6 +28,15 @@ public class CourseCommandLineRunner implements CommandLineRunner {
 		repository.save(new Course(4, "Should be deleted", "in28minutes"));
 		repository.deleteById(4l);
 		System.out.println(repository.findById(1l));
+		
+		System.out.println(repository.findAll());
+		System.out.println(repository.count());
+
+		System.out.println(repository.findByAuthor("in28minutes"));
+		System.out.println(repository.findByAuthor(""));
+		
+		System.out.println(repository.findByName("Learn AWS now - JPA"));
+		System.out.println(repository.findByName(""));
 	}
 	
 	
