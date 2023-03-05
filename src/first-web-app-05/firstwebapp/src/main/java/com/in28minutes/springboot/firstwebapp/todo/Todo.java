@@ -2,6 +2,7 @@ package com.in28minutes.springboot.firstwebapp.todo;
 
 import java.time.LocalDate;
 
+
 public class Todo {
 
 	private int id;
