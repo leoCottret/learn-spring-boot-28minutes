@@ -4,6 +4,6 @@
 	<title>Login page</title>
 </head>
 	<body>
-		login body
+		Hello, ${name}
 	</body>
 </html>
