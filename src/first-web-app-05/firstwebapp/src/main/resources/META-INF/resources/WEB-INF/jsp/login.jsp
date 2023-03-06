@@ -7,7 +7,7 @@
 		Login page.
 		<pre>${errorMessage}</pre>
 		<form method="post">
-			Name: <input type="text" name="name">
+			Name: <input type="text" name="name" value="${name}">
 			Password: <input type="password" name="password">
 			<input type="submit">
 		</form>
