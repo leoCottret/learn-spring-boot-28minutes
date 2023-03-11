@@ -18,9 +18,9 @@ public class TodoService {
 	
 	// to initialise a static variable, you need a static block
 	static {
-		todos.add(new Todo(++todosCount, "Léo", "Learn AWS", LocalDate.now().plusYears(1), false));
-		todos.add(new Todo(++todosCount, "Léo", "Learn DevOps", LocalDate.now().plusYears(1), false));
-		todos.add(new Todo(++todosCount, "Léo", "Learn Full Stack Development", LocalDate.now().plusYears(1), false));
+		todos.add(new Todo(++todosCount, "Léo", "Learn AWS!", LocalDate.now().plusYears(1), false));
+		todos.add(new Todo(++todosCount, "Léo", "Learn DevOps!", LocalDate.now().plusYears(1), false));
+		todos.add(new Todo(++todosCount, "Léo", "Learn Full Stack Development!", LocalDate.now().plusYears(1), false));
 	}
 	
 	public List<Todo> findByUsername(String username) {
