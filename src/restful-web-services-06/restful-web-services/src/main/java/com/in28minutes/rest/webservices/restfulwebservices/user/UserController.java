@@ -2,6 +2,8 @@ package com.in28minutes.rest.webservices.restfulwebservices.user;
 
 import java.net.URI;
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,7 +31,13 @@ public class UserController {
 	
 	@GetMapping("/users/{id}")
 	public User getUser(@PathVariable int id) {
-		return service.findById(id);
+		Optional<User> user = service.findById(id);
+		if (user.isEmpty()) {
+			throw new UserNotFoundException("id:"+id);
+		}		
+		
+		
+		return user.get();
 	}
 	
 	@PostMapping("/users")

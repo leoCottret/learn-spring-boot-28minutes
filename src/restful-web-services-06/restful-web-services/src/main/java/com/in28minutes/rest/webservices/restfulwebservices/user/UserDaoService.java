@@ -1,6 +1,7 @@
 package com.in28minutes.rest.webservices.restfulwebservices.user;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,8 +24,8 @@ public class UserDaoService {
 		userRepository.deleteById(id);
 	}
 
-	public User findById(int id) {
-		return userRepository.findById(id).get();
+	public Optional<User> findById(int id) {
+		return userRepository.findById(id);
 	}
 }
 
