@@ -1,9 +1,11 @@
 package com.in28minutes.rest.webservices.restfulwebservices.user;
 
+import java.net.URI;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RestController
 public class UserController {
@@ -30,8 +33,15 @@ public class UserController {
 	}
 	
 	@PostMapping("/users")
-	public void createUser(@RequestBody User user) {
-		service.save(user);
+	public ResponseEntity<User> createUser(@RequestBody User user) {
+		User savedUser = service.save(user);
+		// append /userId to current url, and add a "location" header to the response
+		// which triggers a redirection when coupled with the 201 status code
+		URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+				.path("/{id}")
+				.buildAndExpand(savedUser.getId())
+				.toUri();
+		return ResponseEntity.created(location).build();
 	}
 	
 	@DeleteMapping("/users/{id}")

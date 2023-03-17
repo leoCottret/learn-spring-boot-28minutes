@@ -15,8 +15,8 @@ public class UserDaoService {
 		return userRepository.findAll();
 	}
 
-	public void save(User todo) {
-		userRepository.save(todo);
+	public User save(User todo) {
+		return userRepository.save(todo);
 	}
 	
 	public void deleteById(int id) {
