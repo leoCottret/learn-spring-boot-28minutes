@@ -34,9 +34,7 @@ public class UserController {
 		Optional<User> user = service.findById(id);
 		if (user.isEmpty()) {
 			throw new UserNotFoundException("id:"+id);
-		}		
-		
-		
+		}	
 		return user.get();
 	}
 	
