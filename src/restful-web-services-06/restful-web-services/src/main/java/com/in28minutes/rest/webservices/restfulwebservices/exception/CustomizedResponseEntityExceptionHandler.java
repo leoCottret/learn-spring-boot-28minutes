@@ -14,21 +14,21 @@ import com.in28minutes.rest.webservices.restfulwebservices.user.UserNotFoundExce
 public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
 	
 	
-	public ResponseEntity<ErrorDetails> getGenericResponseEntity(Exception ex, WebRequest request, HttpStatus httpStatusCode) {
+	public ResponseEntity<ErrorDetails> getGenericResponseEntity(String message, WebRequest request, HttpStatus httpStatusCode) {
 		return new ResponseEntity<ErrorDetails>(
-				new ErrorDetails(LocalDate.now(), ex.getMessage(), request.getDescription(false)),  
+				new ErrorDetails(LocalDate.now(), message, request.getDescription(false)),  
 				httpStatusCode
 			);
 	}
 	
 	@ExceptionHandler(Exception.class)
 	public final ResponseEntity<ErrorDetails> handleAllExceptions(Exception ex, WebRequest request) throws Exception {
-		return getGenericResponseEntity(ex, request, HttpStatus.INTERNAL_SERVER_ERROR);
+		return getGenericResponseEntity(ex.getMessage(), request, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
  
 	@ExceptionHandler(UserNotFoundException.class)
 	public final ResponseEntity<ErrorDetails> handleUserNotFoundException(Exception ex, WebRequest request) throws Exception {
-		return getGenericResponseEntity(ex, request, HttpStatus.NOT_FOUND);
+		return getGenericResponseEntity(ex.getMessage(), request, HttpStatus.NOT_FOUND);
 	}
 	
 }
