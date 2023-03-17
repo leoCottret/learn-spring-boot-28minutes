@@ -2,7 +2,6 @@ package com.in28minutes.rest.webservices.restfulwebservices.user;
 
 import java.net.URI;
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import jakarta.validation.Valid;
 
 @RestController
 public class UserController {
@@ -39,7 +40,7 @@ public class UserController {
 	}
 	
 	@PostMapping("/users")
-	public ResponseEntity<User> createUser(@RequestBody User user) {
+	public ResponseEntity<User> createUser(@Valid @RequestBody User user) {
 		User savedUser = service.save(user);
 		// append /userId to current url, and add a "location" header to the response
 		// which triggers a redirection when coupled with the 201 status code
