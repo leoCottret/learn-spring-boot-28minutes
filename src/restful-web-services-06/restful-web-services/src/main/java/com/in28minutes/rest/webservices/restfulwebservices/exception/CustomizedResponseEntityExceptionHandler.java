@@ -20,11 +20,6 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
 				httpStatusCode
 			);
 	}
-	
-	@ExceptionHandler(Exception.class)
-	public final ResponseEntity<ErrorDetails> handleAllExceptions(Exception ex, WebRequest request) throws Exception {
-		return getGenericResponseEntity(ex.getMessage(), request, HttpStatus.INTERNAL_SERVER_ERROR);
-	}
  
 	@ExceptionHandler(UserNotFoundException.class)
 	public final ResponseEntity<ErrorDetails> handleUserNotFoundException(Exception ex, WebRequest request) throws Exception {

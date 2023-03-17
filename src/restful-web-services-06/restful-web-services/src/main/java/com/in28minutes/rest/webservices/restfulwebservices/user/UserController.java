@@ -52,6 +52,10 @@ public class UserController {
 	
 	@DeleteMapping("/users/{id}")
 	public void deleteUser(@PathVariable int id) {
+		Optional<User> user = service.findById(id);
+		if (user.isEmpty()) {
+			throw new UserNotFoundException("id:"+id);
+		}
 		service.deleteById(id);
 	}
 	
