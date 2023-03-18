@@ -39,8 +39,7 @@ public class VersioningPersonController {
 		return new PersonV2(new Name("LLaMA powered", "Léo v2 with header"));
 	}
 	
-
-	// accept header versioning
+	// accept header versioning (or media type)
 	@GetMapping( path="/person/accept", produces="application/vnd.company.app-v1+json")
 	public PersonV1 getFirstVersionPersonWithMediaType() {
 		return new PersonV1("Léo v1, with media type");

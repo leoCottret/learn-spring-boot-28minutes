@@ -1,10 +1,14 @@
 package com.in28minutes.rest.webservices.restfulwebservices.user;
 
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
+
 import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -31,12 +35,19 @@ public class UserController {
 	}	
 	
 	@GetMapping("/users/{id}")
-	public User getUser(@PathVariable int id) {
+	public EntityModel<User> getUser(@PathVariable int id) {
 		Optional<User> user = service.findById(id);
 		if (user.isEmpty()) {
 			throw new UserNotFoundException("id:"+id);
 		}	
-		return user.get();
+		EntityModel<User> entityModel = EntityModel.of(user.get());
+		
+		// get a full link of the url above getUsers()
+		WebMvcLinkBuilder link = linkTo(methodOn(this.getClass()).getUsers());
+		// add the link with the label "all-users"
+		entityModel.add(link.withRel("all-users"));
+		
+		return entityModel;
 	}
 	
 	@PostMapping("/users")
