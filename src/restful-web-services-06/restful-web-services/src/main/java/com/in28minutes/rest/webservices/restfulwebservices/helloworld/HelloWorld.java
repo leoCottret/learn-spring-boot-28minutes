@@ -1,16 +1,16 @@
 package com.in28minutes.rest.webservices.restfulwebservices.helloworld;
 
-public class HelloWorldBean {
+public class HelloWorld {
 
 	private String message;
 
-	public HelloWorldBean(String message) {
+	public HelloWorld(String message) {
 		this.message = message;
 	}
 
 	@Override
 	public String toString() {
-		return "HelloWorldBean [message=" + message + "]";
+		return "HelloWorld [message=" + message + "]";
 	}
 
 	public String getMessage() {

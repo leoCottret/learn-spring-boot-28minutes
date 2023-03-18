@@ -15,15 +15,15 @@ public class HelloWorldController {
 	}
 
 	@GetMapping(path = "/hello-world-bean")
-	public HelloWorldBean helloWorldBean() {
-		return new HelloWorldBean("Hello World");
+	public HelloWorld helloWorldBean() {
+		return new HelloWorld("Hello World");
 	}
 	
 
 
 	@GetMapping(path = "/hello-world/path-variable/{name}")
-	public HelloWorldBean helloWorldPathVariable(@PathVariable String name) {
-		return new HelloWorldBean(String.format("Hello World, %s", name));
+	public HelloWorld helloWorldPathVariable(@PathVariable String name) {
+		return new HelloWorld(String.format("Hello World, %s", name));
 	}
 	
 }
