@@ -78,4 +78,14 @@ public class UserController {
 		} 
 		service.save(user);
 	}
+	
+	@GetMapping("/users/{id}/posts")
+	public List<Post> getUserPosts(@PathVariable int id) {
+		Optional<User> user = service.findById(id);
+		if (user.isEmpty()) {
+			throw new UserNotFoundException("id:"+id);
+		}
+		
+		return user.get().getPosts();
+	}
 }
